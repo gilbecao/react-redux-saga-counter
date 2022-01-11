@@ -4,13 +4,16 @@ import { render as rtlRender } from "@testing-library/react";
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 // Import your own reducer
-import userReducer from "../redux/reducers/counterReducer";
+import counter from "../redux/reducers/counterReducer";
 
 function render(
   ui,
   {
     preloadedState,
-    store = configureStore({ reducer: { user: userReducer }, preloadedState }),
+    store = configureStore({
+      reducer: { counter },
+      preloadedState,
+    }),
     ...renderOptions
   } = {}
 ) {
